@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+int lanjut(){
+    string input = "";
+    cout << "Apakah masih ada barang lagi? (ya/tidak): ";
+    cin >> input;
+    if (input == "ya") return 1;
+    else if (input == "tidak") return 0;
+    while (true){
+        cout << endl;
+        cout << "Sepertinya anda melakukan sebuah typo, mohon jawab ulang." << endl;
+        cout << "Apakah masih ada barang lagi? (ya/tidak): ";
+        cin >> input;
+        if (input == "ya"){
+            return 1;
+            break;
+        }
+        else if (input == "tidak"){
+            return 0;
+            break;
+        }
+    }
+    return 5;
+}
+
+int main ()
+{
+    int harga_barang, total, uang_bayar, kembalian,jumlah_barang ;
+    string input = "" ;
+    harga_barang = 0 ;
+    total = 0 ;
+    jumlah_barang = 1;
+    while (true) {
+  cout << "masukkan harga barang " << jumlah_barang << " : " ;
+  cin >> harga_barang ;
+  total += harga_barang;
+  cout << "Total : " << total << endl;
+  jumlah_barang ++ ;
+
+
+if (lanjut() == 0)break ;
+    }
+
+cout << endl;
+    cout << "uang yang dibayar : " ;
+    cin >> uang_bayar ;
+    kembalian = uang_bayar-total ;
+    cout << endl ;
+    cout << "-------------------------- " << endl ;
+    cout << "total harga : Rp  " << total << endl ;
+    cout << "uang yang dibayar : Rp  " << uang_bayar << endl ;
+    cout << "kembalian : Rp " << kembalian << endl ;
+    cout << "Jumlah Barang : " << jumlah_barang -1 << endl;
+    cout << "-------------------------- " ;
+
+
+
+  return 0;
+}
